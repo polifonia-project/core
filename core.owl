@@ -75,7 +75,11 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
-    
+    <!-- https://w3id.org/polifonia/ON/core/TimeIndexedSituation -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ON/core/TimeIndexedSituation">
+        <rdfs:label xml:lang="en">Time indexed situation</rdfs:label>
+    </owl:Class>
 
 
     <!-- https://w3id.org/polifonia/ON/core/Place -->
