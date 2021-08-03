@@ -45,6 +45,16 @@
         <rdfs:label xml:lang="en">at time</rdfs:label>
     </owl:ObjectProperty>
     
+    
+    <!-- https://w3id.org/polifonia/ON/core/hasPart -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ON/core/hasPart">
+        <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ON/core/isPartOf"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label xml:lang="en">has part</rdfs:label>
+    </owl:ObjectProperty>
+    
 
 
     <!-- https://w3id.org/polifonia/ON/core/isPlaceOf -->
@@ -63,6 +73,15 @@
         <rdfs:domain rdf:resource="https://w3id.org/polifonia/ON/core/TimeInterval"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:label xml:lang="en">is time interval of</rdfs:label>
+    </owl:ObjectProperty>
+    
+        <!-- https://w3id.org/polifonia/ON/core/isPartOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ON/core/isPartOf">
+        <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ON/core/hasPart"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label xml:lang="en">is part of</rdfs:label>
     </owl:ObjectProperty>
     
 
