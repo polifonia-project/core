@@ -25,6 +25,27 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ON/core/hasAddress -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ON/core/hasAddress">
+        <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ON/core/isAddressOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ON/core/PhysicalSite"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ON/core/Address"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/hasAddressComponent -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ON/core/hasAddressComponent">
+        <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ON/core/isAddressComponentOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ON/core/Address"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ON/core/AddressComponent"/>
+        <rdfs:label xml:lang="en">has address component</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/polifonia/ON/core/hasBirthPlace -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ON/core/hasBirthPlace">
@@ -33,6 +54,39 @@
         <rdfs:domain rdf:resource="https://w3id.org/polifonia/ON/core/Person"/>
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ON/core/Place"/>
         <rdfs:label xml:lang="en">has birth place</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/hasCity -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ON/core/hasCity">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ON/core/hasAddressComponent"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ON/core/Address"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ON/core/City"/>
+        <rdfs:label xml:lang="en">has city</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/hasCountry -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ON/core/hasCountry">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ON/core/hasAddressComponent"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ON/core/Address"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ON/core/Country"/>
+        <rdfs:label xml:lang="en">has country</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/hasDistrict -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ON/core/hasDistrict">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ON/core/hasAddressComponent"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ON/core/Address"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ON/core/District"/>
+        <rdfs:label xml:lang="en">has district</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -59,6 +113,39 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ON/core/hasProvince -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ON/core/hasProvince">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ON/core/hasAddressComponent"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ON/core/Address"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ON/core/Province"/>
+        <rdfs:label xml:lang="en">has province</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/hasRegion -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ON/core/hasRegion">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ON/core/hasAddressComponent"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ON/core/Address"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ON/core/Region"/>
+        <rdfs:label xml:lang="en">has region</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/hasStreet -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ON/core/hasStreet">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ON/core/hasAddressComponent"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ON/core/Address"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ON/core/Street"/>
+        <rdfs:label xml:lang="en">has street</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/polifonia/ON/core/hasTimeInterval -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ON/core/hasTimeInterval">
@@ -66,6 +153,26 @@
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ON/core/TimeInterval"/>
         <rdfs:label xml:lang="en">at time</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/isAddressComponentOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ON/core/isAddressComponentOf">
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ON/core/AddressComponent"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ON/core/Address"/>
+        <rdfs:label xml:lang="en">is address component of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/isAddressOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ON/core/isAddressOf">
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ON/core/Address"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ON/core/PhysicalSite"/>
+        <rdfs:label xml:lang="en">is address of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -114,11 +221,91 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/fullAddress -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/polifonia/ON/core/fullAddress">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ON/core/Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="en">full address</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/postcode -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/polifonia/ON/core/postcode">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ON/core/Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="en">postcode</rdfs:label>
+        <rdfs:label xml:lang="en">zipcode</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/streetNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/polifonia/ON/core/streetNumber">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ON/core/Address"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="en">street number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/Address -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ON/core/Address">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ON/core/GeographicalFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ON/core/hasAddressComponent"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/polifonia/ON/core/AddressComponent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ON/core/postcode"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ON/core/streetNumber"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Address</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/AddressComponent -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ON/core/AddressComponent">
+        <rdfs:label xml:lang="en">Address component</rdfs:label>
+    </owl:Class>
     
 
 
@@ -130,9 +317,33 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ON/core/City -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ON/core/City">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ON/core/GeographicalFeature"/>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/polifonia/ON/core/Country -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ON/core/Country">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ON/core/GeographicalFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/District -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ON/core/District">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ON/core/GeographicalFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/GeographicalFeature -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ON/core/GeographicalFeature">
         <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ON/core/Place"/>
     </owl:Class>
     
@@ -147,10 +358,41 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ON/core/PhysicalSite -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ON/core/PhysicalSite">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ON/core/GeographicalFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ON/core/hasAddress"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/polifonia/ON/core/Address"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Physical site</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/polifonia/ON/core/Place -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ON/core/Place">
         <rdfs:label xml:lang="en">Place</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/Province -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ON/core/Province">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ON/core/GeographicalFeature"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/Region -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ON/core/Region">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ON/core/GeographicalFeature"/>
     </owl:Class>
     
 
@@ -167,6 +409,15 @@
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ON/core/Situation">
         <rdfs:label xml:lang="en">Situation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/Street -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ON/core/Street">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ON/core/GeographicalFeature"/>
+        <rdfs:label xml:lang="en">Street</rdfs:label>
     </owl:Class>
     
 
