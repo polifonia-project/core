@@ -31,6 +31,7 @@
         <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ON/core/isAddressOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/polifonia/ON/core/PhysicalSite"/>
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ON/core/Address"/>
+        <rdfs:label xml:lang="en">has address</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -152,7 +153,7 @@
         <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ON/core/isTimeIntervalOf"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ON/core/TimeInterval"/>
-        <rdfs:label xml:lang="en">at time</rdfs:label>
+        <rdfs:label xml:lang="en">has time interval</rdfs:label>
     </owl:ObjectProperty>
     
 
