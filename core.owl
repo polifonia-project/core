@@ -25,6 +25,18 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ON/core/hasBirthPlace -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ON/core/hasBirthPlace">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ON/core/hasPlace"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ON/core/isBirthPlaceOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ON/core/Person"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ON/core/Place"/>
+        <rdfs:label xml:lang="en">has birth place</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/polifonia/ON/core/hasPart -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ON/core/hasPart">
@@ -54,6 +66,17 @@
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ON/core/TimeInterval"/>
         <rdfs:label xml:lang="en">at time</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/isBirthPlaceOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ON/core/isBirthPlaceOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ON/core/isPlaceOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ON/core/Place"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ON/core/Person"/>
+        <rdfs:label xml:lang="en">is birth place of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -103,6 +126,23 @@
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ON/core/Agent">
         <rdfs:label xml:lang="en">Agent</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/Country -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ON/core/Country">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ON/core/Place"/>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/Person -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ON/core/Person">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ON/core/Agent"/>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
     </owl:Class>
     
 
