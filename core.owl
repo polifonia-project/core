@@ -488,7 +488,7 @@
     <!-- https://w3id.org/polifonia/ON/core/GeographicalFeature -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ON/core/GeographicalFeature">
-        <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ON/core/Place"/>
+        <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ON/core/SpatialObject"/>
         <rdfs:label xml:lang="en">Geographical feature</rdfs:label>
     </owl:Class>
     
@@ -513,6 +513,7 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/polifonia/ON/core/Address"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">This class represents a physical site, that is an area, a structure (e.g. a building) or a group of structures where something was, is or will be located. It is a physical site that situates something.</rdfs:comment>
         <rdfs:label xml:lang="en">Physical site</rdfs:label>
     </owl:Class>
     
@@ -556,6 +557,15 @@
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ON/core/Situation">
         <rdfs:label xml:lang="en">Situation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ON/core/SpatialObject -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ON/core/SpatialObject">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ON/core/Place"/>
+        <rdfs:label xml:lang="en">Spatial object</rdfs:label>
     </owl:Class>
     
 
