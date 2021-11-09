@@ -1,6 +1,6 @@
 # Core
 
-The Core ontology module of the [Polifonia ontology network](https://github.com/polifonia-project/ON) models general-purpose concepts and relationships (e.g. place, time, classification, situation) orthogonal to the whole Polifonia ontology network, and is imported by all the other thematic ontology modules of the network.
+The Core ontology module of the [Polifonia ontology network](https://github.com/polifonia-project/ontology-network) models general-purpose concepts and relationships (e.g. place, time, classification, situation) orthogonal to the whole Polifonia ontology network, and is imported by all the other thematic ontology modules of the network.
 
 
 <img width="396" alt="core-coordinates" src="https://user-images.githubusercontent.com/44606644/140661885-49254955-2977-4953-b0f4-3cd7984ca456.png">
