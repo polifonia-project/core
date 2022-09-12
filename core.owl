@@ -7,7 +7,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="https://w3id.org/polifonia/ontology/core">
-        <owl:versionIRI rdf:resource="https://w3id.org/polifonia/ontology/core/0.0.1"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/polifonia/ontology/core/0.1"/>
         <rdfs:comment xml:lang="en">This is the ontology Core of the Polifonia ontology network. It represents general-purpose concepts and relations (e.g. place, time, classification, situation) orthogonal to the whole network, and is imported by all the other thematic ontology modules of the network.</rdfs:comment>
         <rdfs:label xml:lang="en">Core ontology (Polifonia ontology network)</rdfs:label>
     </owl:Ontology>
@@ -579,10 +579,54 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/TimeIndexedRole -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/TimeIndexedRole">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ontology/core/Situation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasAgent"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasRole"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/Role"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasTimeInterval"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/TimeInterval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/TimeIndexedSituation -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/TimeIndexedSituation">
         <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ontology/core/Situation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasAgent"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasTimeInterval"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/TimeInterval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasPlace"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/Place"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Time indexed situation</rdfs:label>
     </owl:Class>
     
