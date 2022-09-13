@@ -114,6 +114,27 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/hasName -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasName">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Name"/>
+        <rdfs:label xml:lang="en">has name</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/hasNickname -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasNickname">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ontology/core/hasName"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Name"/>
+        <rdfs:label xml:lang="en">has nickname</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/hasPart -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasPart">
@@ -176,6 +197,17 @@
         <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Address"/>
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Street"/>
         <rdfs:label xml:lang="en">has street</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/hasTimeIndexedName -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasTimeIndexedName">
+        <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ontology/core/isTimeIndexedNameOf"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/TimeIndexedName"/>
+        <rdfs:label xml:lang="en">has time indexed name</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -252,6 +284,17 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/isAnagramOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isAnagramOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Name"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Name"/>
+        <rdfs:label xml:lang="en">is anagram of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/isBirthPlaceOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isBirthPlaceOf">
@@ -293,6 +336,16 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/isTimeIndexedNameOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isTimeIndexedNameOf">
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/TimeIndexedName"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label xml:lang="en">is time indexed name of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/isTimeIntervalOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isTimeIntervalOf">
@@ -319,6 +372,16 @@
         <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Type"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:label xml:lang="en">is type of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/isValidWithin -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isValidWithin">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label xml:lang="en">is valid within</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -351,6 +414,27 @@
         <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Address"/>
         <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
         <rdfs:label xml:lang="en">full address</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/name -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/polifonia/ontology/core/name">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="en">name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/nickname -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/polifonia/ontology/core/nickname">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ontology/core/name"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:label xml:lang="en">nickname</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -494,6 +578,21 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/Name -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Name"/>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/Organization -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Organization">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ontology/core/Agent"/>
+        <rdfs:label xml:lang="en">Organization</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/Person -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Person">
@@ -556,12 +655,6 @@
     <!-- https://w3id.org/polifonia/ontology/core/Situation -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Situation">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasAgent"/>
-                <owl:someValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/Agent"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Situation</rdfs:label>
     </owl:Class>
     
@@ -581,6 +674,33 @@
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Street">
         <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ontology/core/GeographicalFeature"/>
         <rdfs:label xml:lang="en">Street</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/TimeIndexedName -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/TimeIndexedName">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ontology/core/Situation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasTimeInterval"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/TimeInterval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/isTimeIndexedNameOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/isValidWithin"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/Organization"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Time indexed name</rdfs:label>
     </owl:Class>
     
 
