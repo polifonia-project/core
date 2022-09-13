@@ -556,6 +556,12 @@
     <!-- https://w3id.org/polifonia/ontology/core/Situation -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Situation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasAgent"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Situation</rdfs:label>
     </owl:Class>
     
