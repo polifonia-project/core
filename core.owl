@@ -245,6 +245,16 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/includesName -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/includesName">
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/TimeIndexedName"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Name"/>
+        <rdfs:label xml:lang="en">includes name</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/isAddressComponentOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isAddressComponentOf">
@@ -686,6 +696,12 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasTimeInterval"/>
                 <owl:someValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/TimeInterval"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/includesName"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/Name"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
