@@ -43,6 +43,18 @@
     
 
 
+    <!-- https://w3id.org/framester/pb/localrole/name_of_arg1 -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/framester/pb/localrole/name_of_arg1"/>
+    
+
+
+    <!-- https://w3id.org/framester/pb/localrole/named -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/framester/pb/localrole/named"/>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/hasPlace -->
 
     <rdf:Description rdf:about="https://w3id.org/polifonia/ontology/core/hasPlace">
@@ -51,10 +63,51 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/includesName -->
+
+    <rdf:Description rdf:about="https://w3id.org/polifonia/ontology/core/includesName">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/framester/pb/localrole/name_of_arg1"/>
+    </rdf:Description>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/isPlaceOf -->
 
-    <rdf:Description rdf:about="https://w3id.org/polifonia/ON/ontology/isPlaceOf">
+    <rdf:Description rdf:about="https://w3id.org/polifonia/ontology/core/isPlaceOf">
         <rdfs:subPropertyOf rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#isLocationOf"/>
+    </rdf:Description>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/isTimeIndexedNameOf -->
+
+    <rdf:Description rdf:about="https://w3id.org/polifonia/ontology/core/isTimeIndexedNameOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/framester/pb/localrole/named"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/framester/pb/data/name-01 -->
+
+    <owl:Class rdf:about="https://w3id.org/framester/pb/data/name-01"/>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/TimeIndexedName -->
+
+    <rdf:Description rdf:about="https://w3id.org/polifonia/ontology/core/TimeIndexedName">
+        <rdfs:subClassOf rdf:resource="https://w3id.org/framester/pb/data/name-01"/>
     </rdf:Description>
 </rdf:RDF>
 
