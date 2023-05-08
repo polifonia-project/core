@@ -161,6 +161,8 @@
     <!-- https://w3id.org/polifonia/ontology/core/hasMusicTimeDuration -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasMusicTimeDuration">
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeInterval"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeDuration"/>
         <rdfs:label xml:lang="en">has music time duration</rdfs:label>
     </owl:ObjectProperty>
     
@@ -169,6 +171,8 @@
     <!-- https://w3id.org/polifonia/ontology/core/hasMusicTimeIndex -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasMusicTimeIndex">
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeInterval"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeIndexComponent"/>
         <rdfs:label xml:lang="en">has music time index</rdfs:label>
     </owl:ObjectProperty>
     
@@ -177,6 +181,8 @@
     <!-- https://w3id.org/polifonia/ontology/core/hasMusicTimeIndexComponent -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasMusicTimeIndexComponent">
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeIndex"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeIndexComponent"/>
         <rdfs:label xml:lang="en">has music time index component</rdfs:label>
     </owl:ObjectProperty>
     
@@ -333,6 +339,10 @@
     <!-- https://w3id.org/polifonia/ontology/core/hasValueType -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasValueType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeDuration"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeIndexComponent"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeValueType"/>
         <rdfs:label xml:lang="en">hasValueType</rdfs:label>
     </owl:ObjectProperty>
     
@@ -800,6 +810,31 @@
     <!-- https://w3id.org/polifonia/ontology/core/MusicTimeDuration -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/MusicTimeDuration">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasValueType"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeValueType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasValueType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeValueType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/value"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/value"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Music Time Duration</rdfs:label>
     </owl:Class>
     
@@ -808,6 +843,19 @@
     <!-- https://w3id.org/polifonia/ontology/core/MusicTimeIndex -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/MusicTimeIndex">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasMusicTimeIndexComponent"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeIndexComponent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasMusicTimeIndexComponent"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeIndexComponent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Music Time Index</rdfs:label>
     </owl:Class>
     
@@ -816,6 +864,31 @@
     <!-- https://w3id.org/polifonia/ontology/core/MusicTimeIndexComponent -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/MusicTimeIndexComponent">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasValueType"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeValueType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasValueType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeValueType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/value"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/value"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Music Time Index Component</rdfs:label>
     </owl:Class>
     
@@ -824,6 +897,32 @@
     <!-- https://w3id.org/polifonia/ontology/core/MusicTimeInterval -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/MusicTimeInterval">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasMusicTimeDuration"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeDuration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasMusicTimeIndex"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeIndex"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasMusicTimeDuration"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeDuration"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasMusicTimeIndex"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeIndex"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Music Time Interval</rdfs:label>
     </owl:Class>
     
@@ -1070,6 +1169,65 @@
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Type">
         <rdfs:label xml:lang="en">Type</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/Beats -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/polifonia/ontology/core/Beats">
+        <rdf:type rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeInterval"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/Hours -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/polifonia/ontology/core/Hours">
+        <rdf:type rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeInterval"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/Measures -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/polifonia/ontology/core/Measures">
+        <rdf:type rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeInterval"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/Milliseconds -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/polifonia/ontology/core/Milliseconds">
+        <rdf:type rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeInterval"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/Minutes -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/polifonia/ontology/core/Minutes">
+        <rdf:type rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeInterval"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/Seconds -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/polifonia/ontology/core/Seconds">
+        <rdf:type rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeInterval"/>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
