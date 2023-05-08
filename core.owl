@@ -132,6 +132,15 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/hasEndMusicTimeIndex -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasEndMusicTimeIndex">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ontology/core/hasMusicTimeIndex"/>
+        <rdfs:label xml:lang="en">has end music time index</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/hasLanguage -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasLanguage">
@@ -145,6 +154,30 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasMember">
         <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ontology/core/isMemberOf"/>
         <rdfs:label xml:lang="en">Has member</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/hasMusicTimeDuration -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasMusicTimeDuration">
+        <rdfs:label xml:lang="en">has music time duration</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/hasMusicTimeIndex -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasMusicTimeIndex">
+        <rdfs:label xml:lang="en">has music time index</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/hasMusicTimeIndexComponent -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasMusicTimeIndexComponent">
+        <rdfs:label xml:lang="en">has music time index component</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -233,6 +266,15 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/hasStartMusicTimeIndex -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasStartMusicTimeIndex">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ontology/core/hasMusicTimeIndex"/>
+        <rdfs:label xml:lang="en">has start music time index</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/hasStreet -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasStreet">
@@ -284,6 +326,14 @@
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Type"/>
         <rdfs:label xml:lang="en">has type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/hasValueType -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasValueType">
+        <rdfs:label xml:lang="en">hasValueType</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -605,6 +655,18 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/value -->
+
+    <owl:DatatypeProperty rdf:about="https://w3id.org/polifonia/ontology/core/value">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeDuration"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeIndexComponent"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+        <rdfs:comment xml:lang="en">value</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -731,6 +793,46 @@
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/MusicDataset">
         <rdfs:label xml:lang="en">Music Dataset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/MusicTimeDuration -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/MusicTimeDuration">
+        <rdfs:label xml:lang="en">Music Time Duration</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/MusicTimeIndex -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/MusicTimeIndex">
+        <rdfs:label xml:lang="en">Music Time Index</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/MusicTimeIndexComponent -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/MusicTimeIndexComponent">
+        <rdfs:label xml:lang="en">Music Time Index Component</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/MusicTimeInterval -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/MusicTimeInterval">
+        <rdfs:label xml:lang="en">Music Time Interval</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/MusicTimeValueType -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/MusicTimeValueType">
+        <rdfs:label xml:lang="en">Music Time Value Type</rdfs:label>
     </owl:Class>
     
 
