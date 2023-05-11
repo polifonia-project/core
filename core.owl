@@ -471,6 +471,18 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/isRealizedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isRealizedBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ontology/core/realizes"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/InformationObject"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/InformationRealization"/>
+        <rdfs:comment xml:lang="en">A relation between an information object and its realization (an information realization).</rdfs:comment>
+        <rdfs:label xml:lang="en">is realized by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/isRoleOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isRoleOf">
@@ -531,6 +543,17 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/realizes -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/realizes">
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/InformationRealization"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/InformationObject"/>
+        <rdfs:comment xml:lang="en">A relation between an information realization and an information object.</rdfs:comment>
+        <rdfs:label xml:lang="en">realizes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -566,6 +589,7 @@
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ontology/core/time"/>
         <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/TimeInterval"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">The end time of a time interval.</rdfs:comment>
         <rdfs:label xml:lang="en">end time</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -621,6 +645,7 @@
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ontology/core/time"/>
         <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/TimeInterval"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:comment xml:lang="en">The start time of a time interval.</rdfs:comment>
         <rdfs:label xml:lang="en">start time</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -688,6 +713,15 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/Action -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Action">
+        <rdfs:comment xml:lang="en">A situation with at least one agent that is participant in it, and that executes a specific task that may be defined in a plan, workflow, project, etc.</rdfs:comment>
+        <rdfs:label xml:lang="en">Action</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/Address -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Address">
@@ -726,6 +760,7 @@
     <!-- https://w3id.org/polifonia/ontology/core/Agent -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Agent">
+        <rdfs:comment xml:lang="en">Any agentive Object, either physical (e.g. a person, a robot), or social (e.g. a corporation, an institution, a community)</rdfs:comment>
         <rdfs:label xml:lang="en">Agent</rdfs:label>
     </owl:Class>
     
@@ -759,6 +794,19 @@
     <!-- https://w3id.org/polifonia/ontology/core/Collection -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Collection">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasMember"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasPart"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/Collection"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A collection of any entities: e.g. groups, repositories, communities, etc., intended as any container for entities that share one or more common properties.</rdfs:comment>
         <rdfs:label xml:lang="en">Collection</rdfs:label>
     </owl:Class>
     
@@ -787,6 +835,24 @@
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/GeographicalFeature">
         <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ontology/core/SpatialObject"/>
         <rdfs:label xml:lang="en">Geographical feature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/InformationObject -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/InformationObject">
+        <rdfs:comment xml:lang="en">A piece of information, such as a musical composition, a text, a word, a picture, independently from how it is concretely and phisically realized.</rdfs:comment>
+        <rdfs:label xml:lang="en">Information object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/InformationRealization -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/InformationRealization">
+        <rdfs:comment xml:lang="en">A concrete and physical realization of an information object.</rdfs:comment>
+        <rdfs:label xml:lang="en">Information realization</rdfs:label>
     </owl:Class>
     
 
@@ -948,6 +1014,7 @@
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Organization">
         <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ontology/core/Agent"/>
+        <rdfs:comment xml:lang="en">An internally structured, conventionally created social agent, needing a specific role and agent that plays it, in order to act.</rdfs:comment>
         <rdfs:label xml:lang="en">Organization</rdfs:label>
     </owl:Class>
     
@@ -981,6 +1048,7 @@
     <!-- https://w3id.org/polifonia/ontology/core/Place -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Place">
+        <rdfs:comment xml:lang="en">Anything that is intended as a location for something else, e.g. geographical places, spatial objects.</rdfs:comment>
         <rdfs:label xml:lang="en">Place</rdfs:label>
     </owl:Class>
     
@@ -1015,6 +1083,7 @@
     <!-- https://w3id.org/polifonia/ontology/core/Role -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Role">
+        <rdfs:comment xml:lang="en">A concept that classifies an object.</rdfs:comment>
         <rdfs:label xml:lang="en">Role</rdfs:label>
     </owl:Class>
     
@@ -1023,6 +1092,7 @@
     <!-- https://w3id.org/polifonia/ontology/core/Situation -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Situation">
+        <rdfs:comment xml:lang="en">Any entity that typically flows in time, either in the physical or social world  Examples include athmospheric phenomena, concerts, travels, institutional processes, etc. It also represents a relational context created by an observer on the basis of a frame.</rdfs:comment>
         <rdfs:label xml:lang="en">Situation</rdfs:label>
     </owl:Class>
     
@@ -1057,6 +1127,7 @@
     <!-- https://w3id.org/polifonia/ontology/core/Task -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Task">
+        <rdfs:comment xml:lang="en">A task that classifies an action to be executed.</rdfs:comment>
         <rdfs:label xml:lang="en">Task</rdfs:label>
     </owl:Class>
     
@@ -1090,6 +1161,7 @@
                 <owl:allValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/Organization"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">The situation of an entity having a name valid during a specific time interval.</rdfs:label>
         <rdfs:label xml:lang="en">Time indexed name</rdfs:label>
     </owl:Class>
     
@@ -1117,6 +1189,7 @@
                 <owl:someValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/TimeInterval"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">The situation of an entity having a role at a specific time interval.</rdfs:label>
     </owl:Class>
     
 
@@ -1143,6 +1216,7 @@
                 <owl:allValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/Place"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A situation with a clearly defined time extension.</rdfs:comment>
         <rdfs:label xml:lang="en">Time indexed situation</rdfs:label>
     </owl:Class>
     
@@ -1151,6 +1225,27 @@
     <!-- https://w3id.org/polifonia/ontology/core/TimeInterval -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/TimeInterval">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/time"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/endTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/startTime"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A time interval.</rdfs:comment>
         <rdfs:label xml:lang="en">Time interval</rdfs:label>
     </owl:Class>
     
@@ -1159,6 +1254,7 @@
     <!-- https://w3id.org/polifonia/ontology/core/Title -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Title">
+        <rdfs:comment xml:lang="en">The title of an entity.</rdfs:comment>
         <rdfs:label xml:lang="en">Title</rdfs:label>
     </owl:Class>
     
@@ -1167,6 +1263,7 @@
     <!-- https://w3id.org/polifonia/ontology/core/Type -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Type">
+        <rdfs:comment xml:lang="en">The concept of a type.</rdfs:comment>
         <rdfs:label xml:lang="en">Type</rdfs:label>
     </owl:Class>
     
