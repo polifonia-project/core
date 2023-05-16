@@ -7,7 +7,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="https://w3id.org/polifonia/ontology/core/">
-        <owl:versionIRI rdf:resource="https://w3id.org/polifonia/ontology/core/0.1/"/>
+        <owl:versionIRI rdf:resource="https://w3id.org/polifonia/ontology/core/1.0/"/>
         <rdfs:comment xml:lang="en">This is the ontology Core of the Polifonia ontology network. It represents general-purpose concepts and relations (e.g. place, time, classification, situation) orthogonal to the whole network, and is imported by all the other thematic ontology modules of the network.</rdfs:comment>
         <rdfs:label xml:lang="en">Core ontology (Polifonia ontology network)</rdfs:label>
     </owl:Ontology>
@@ -154,6 +154,17 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasMember">
         <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ontology/core/isMemberOf"/>
         <rdfs:label xml:lang="en">Has member</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/hasMembershipStrength -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasMembershipStrength">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/CollectionMembership"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/CellectionMembershipStrength"/>
+        <rdfs:label xml:lang="en">Has membership strength</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -358,10 +369,30 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/involves -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/involves">
+        <rdfs:label xml:lang="en">Involves</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/involvesAgent -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/involvesAgent">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ontology/core/involves"/>
         <rdfs:label xml:lang="en">Involves agent</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/involvesCollection -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/involvesCollection">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ontology/core/involves"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/CollectionMembership"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Collection"/>
+        <rdfs:label xml:lang="en">Involves collection</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -369,6 +400,7 @@
     <!-- https://w3id.org/polifonia/ontology/core/involvesRole -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/involvesRole">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ontology/core/involves"/>
         <rdfs:label xml:lang="en">Involves role</rdfs:label>
     </owl:ObjectProperty>
     
@@ -435,10 +467,29 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/isDefinedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isDefinedBy">
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Collection"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/CollectionConcept"/>
+        <rdfs:label xml:lang="en">is defined by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/isDerivedFrom -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isDerivedFrom">
         <rdfs:label xml:lang="en">Is derived from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/isInvolvedIn -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isInvolvedIn">
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/CollectionMembership"/>
+        <rdfs:label xml:lang="en">Is involved in</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -782,6 +833,14 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/CellectionMembershipStrength -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/CellectionMembershipStrength">
+        <rdfs:label xml:lang="en">Collection Membership Strength</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/City -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/City">
@@ -806,8 +865,44 @@
                 <owl:allValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/Collection"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/isDefinedBy"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/CollectionConcept"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A collection of any entities: e.g. groups, repositories, communities, etc., intended as any container for entities that share one or more common properties.</rdfs:comment>
         <rdfs:label xml:lang="en">Collection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/CollectionConcept -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/CollectionConcept">
+        <rdfs:comment xml:lang="en">The concept that holds together the members of a collection.</rdfs:comment>
+        <rdfs:label xml:lang="en">Collection Concept</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/CollectionMembership -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/CollectionMembership">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasMembershipStrength"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/CellectionMembershipStrength"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/involvesCollection"/>
+                <owl:allValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/Collection"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">The membership of an individual in a collection, which allows to describe attributes of such membership (e.g. Membership Strength).</rdfs:comment>
+        <rdfs:label xml:lang="en">Collection Membership</rdfs:label>
     </owl:Class>
     
 
