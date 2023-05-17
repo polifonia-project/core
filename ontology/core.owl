@@ -25,6 +25,18 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/classifies -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/classifies">
+        <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ontology/core/isClassifiedBy"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Concept"/>
+        <rdfs:comment rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/classification.owl"/>
+        <rdfs:comment xml:lang="en">A relation between a Concept and an Entity, e.g. the Role &apos;student&apos; classifies a Person &apos;John&apos;.</rdfs:comment>
+        <rdfs:label>classifies</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/executesTask -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/executesTask">
@@ -467,6 +479,17 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/isClassifiedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isClassifiedBy">
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Concept"/>
+        <rdfs:comment xml:lang="en">A relation between a Concept and an Entity, e.g. &apos;John is considered a typical rude man&apos;; your last concert constitutes the achievement of a lifetime; &apos;20-year-old means she&apos;s mature enough&apos;.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/classification.owl"/>
+        <rdfs:label xml:lang="en">is classified by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/isDefinedBy -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isDefinedBy">
@@ -903,6 +926,17 @@
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">The membership of an individual in a collection, which allows to describe attributes of such membership (e.g. Membership Strength).</rdfs:comment>
         <rdfs:label xml:lang="en">Collection Membership</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/Concept -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Concept">
+        <rdfs:comment xml:lang="en">A concept is a Social Object. 
+The classifies relation relates concepts to entities at some time, but time can only be expressed in the alternative pattern: timeindexedclassification.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/classification.owl"/>
+        <rdfs:label xml:lang="en">Concept</rdfs:label>
     </owl:Class>
     
 
