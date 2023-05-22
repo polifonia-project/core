@@ -37,6 +37,34 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/defines -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/defines">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ontology/core/usesConcept"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ontology/core/isDefinedIn"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Description"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Concept"/>
+        <rdfs:comment xml:lang="en">A relation between a Description and a Concept, e.g. a Workflow for a governmental Organization defines the Role &apos;officer&apos;, or &apos;the Italian Traffic Law defines the role Vehicle&apos;.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl"/>
+        <rdfs:label xml:lang="en">defines</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/describes -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/describes">
+        <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ontology/core/isDescribedBy"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Description"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">The relation between a Description and an Entity : a Description gives a unity to a Collection of parts (the components), or constituents, by assigning a Role to each of them in the context of a whole Object (the system).
+A same Entity can be given different descriptions, for example, an old cradle can be given a unifying Description based on the original aesthetic design, the functionality it was built for, or a new aesthetic functionality in which it can be used as a flower pot.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/descriptionandsituation.owl"/>
+        <rdfs:label xml:lang="en">describes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/executesTask -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/executesTask">
@@ -122,6 +150,26 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/hasCondition -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasCondition">
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Explanation"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Situation"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/polifonia/ontology/core/hasExplanandum"/>
+            <rdf:Description rdf:about="https://w3id.org/polifonia/ontology/core/hasSetting"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="https://w3id.org/polifonia/ontology/core/hasExplanans"/>
+            <rdf:Description rdf:about="https://w3id.org/polifonia/ontology/core/hasSetting"/>
+        </owl:propertyChainAxiom>
+        <rdfs:comment xml:lang="en">contextualises an explanation</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://ontologydesignpatterns.org/wiki/Submissions:ExplanationODP"/>
+        <rdfs:label xml:lang="en">has condition</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/hasCountry -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasCountry">
@@ -149,6 +197,30 @@
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasEndMusicTimeIndex">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ontology/core/hasMusicTimeIndex"/>
         <rdfs:label xml:lang="en">has end music time index</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/hasExplanandum -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasExplanandum">
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Explanation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">Relates the explanation to its posterior event</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://ontologydesignpatterns.org/wiki/Submissions:ExplanationODP"/>
+        <rdfs:label xml:lang="en">has explanandum</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/hasExplanans -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasExplanans">
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Explanation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">relates an explanation to its antecedent event</rdfs:comment>
+        <rdfs:label rdf:resource="http://ontologydesignpatterns.org/wiki/Submissions:ExplanationODP"/>
+        <rdfs:label xml:lang="en">has explanans</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -236,8 +308,11 @@
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasPart">
         <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ontology/core/isPartOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">A transitive relation expressing parthood between any entities, e.g. &apos;the human body has a brain as part&apos;. When specializing this pattern, take care of restricting the domain and range appropriately, since it could be counterintuitive to use this relation arbitrarily, e.g. between animals and planets. For an intransitive partof pattern, see &apos;componency&apos;.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/partof.owl"/>
         <rdfs:label xml:lang="en">has part</rdfs:label>
     </owl:ObjectProperty>
     
@@ -283,6 +358,19 @@
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Role"/>
         <rdfs:label xml:lang="en">has role</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/hasSetting -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasSetting">
+        <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ontology/core/isSettingFor"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Situation"/>
+        <rdfs:comment>A relation between entities and situations, e.g. &apos;this morning I&apos;ve prepared my coffee with a new fantastic Arabica&apos; (i.e.: (an amount of) a new fantastic Arabica hasSetting the preparation of my coffee this morning).</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/situation.owl"/>
+        <rdfs:label xml:lang="en">has setting</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -468,6 +556,15 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/isBasedOn -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isBasedOn">
+        <rdfs:isDefinedBy rdf:resource="http://ontologydesignpatterns.org/wiki/Submissions:ExplanationODP"/>
+        <rdfs:label xml:lang="en">is based on</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/isBirthPlaceOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isBirthPlaceOf">
@@ -490,6 +587,30 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/isConceptUsedIn -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isConceptUsedIn">
+        <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ontology/core/usesConcept"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Concept"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Description"/>
+        <rdfs:comment xml:lang="en">A more generic relation holding between a Description and a Concept. In order to be used, a Concept must be previously definedIn another Description</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl"/>
+        <rdfs:label xml:lang="en">is concept used in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/isConceptualizedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isConceptualizedBy">
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Explanation"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Agent"/>
+        <rdfs:label xml:lang="en">is conceptualized By</rdfs:label>
+        <rdfs:seeAlso rdf:resource="http://ontologydesignpatterns.org/wiki/Submissions:ExplanationODP"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/isDefinedBy -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isDefinedBy">
@@ -500,10 +621,49 @@
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/isDefinedIn -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isDefinedIn">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ontology/core/isConceptUsedIn"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Concept"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Description"/>
+        <rdfs:comment rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl"/>
+        <rdfs:comment xml:lang="en">A relation between a Description and a Concept, e.g. a Workflow for a governmental Organization defines the Role &apos;officer&apos;, or &apos;the Italian Traffic Law defines the role Vehicle&apos;.</rdfs:comment>
+        <rdfs:label xml:lang="en">is defined in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/isDerivedFrom -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isDerivedFrom">
         <rdfs:label xml:lang="en">Is derived from</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/isDescribedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isDescribedBy">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Description"/>
+        <rdfs:comment>The relation between any Thing and a Description: a Description gives a unity to a Collection of parts (the components), or constituents, by assigning a Role to each of them in the context of a whole Object (the system).
+A same Thing can be given different descriptions, for example, an old cradle can be given a unifying Description based on the original aesthetic design, the functionality it was built for, or a new aesthetic functionality in which it can be used as a flower pot.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/descriptionandsituation.owl"/>
+        <rdfs:label xml:lang="en">is described by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/isExplanationBasedOn -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isExplanationBasedOn">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ontology/core/isBasedOn"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Explanation"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Theory"/>
+        <rdfs:comment xml:lang="en">If there exists a situation in which an explanation is contextualised (according to the object property hasCondition), then both the explanans and the explanan- dum do share this same situation, meaning that they are in the same context.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://ontologydesignpatterns.org/wiki/Submissions:ExplanationODP"/>
+        <rdfs:label>is explanation based on</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -528,8 +688,11 @@
     <!-- https://w3id.org/polifonia/ontology/core/isPartOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isPartOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">A transitive relation expressing parthood between any entities, e.g. &apos;brain is a part of the human body&apos;. When specializing this pattern, take care of restricting the domain and range appropriately, since it could be counterintuitive to use this relation arbitrarily, e.g. between animals and planets. For an intransitive partof pattern, see &apos;componency&apos;.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/partof.owl"/>
         <rdfs:label xml:lang="en">is part of</rdfs:label>
     </owl:ObjectProperty>
     
@@ -563,6 +726,30 @@
         <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Role"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:label xml:lang="en">is role of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/isSatisfiedBy -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isSatisfiedBy">
+        <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ontology/core/satisfies"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Description"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Situation"/>
+        <rdfs:comment>A relation between a Situation and a Description, e.g. the execution of a Plan satisfies that plan.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/descriptionandsituation.owl"/>
+        <rdfs:label xml:lang="en">is satisfied by</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/isSettingFor -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isSettingFor">
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Situation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/situation.owl"/>
+        <rdfs:label xml:lang="en">is setting for</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -624,6 +811,30 @@
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/InformationObject"/>
         <rdfs:comment xml:lang="en">A relation between an information realization and an information object.</rdfs:comment>
         <rdfs:label xml:lang="en">realizes</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/satisfies -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/satisfies">
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Situation"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Description"/>
+        <rdfs:comment rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/descriptionandsituation.owl"/>
+        <rdfs:comment xml:lang="en">A relation between a Situation and a Description, e.g. the execution of a Plan satisfies that plan.</rdfs:comment>
+        <rdfs:label xml:lang="en">satisfies</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/usesConcept -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/usesConcept">
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Description"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Concept"/>
+        <rdfs:comment rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl"/>
+        <rdfs:comment>A generic relation holding between a Description and a Concept. In order to be used, a Concept must be previously definedIn another Description. This last condition cannot be encoded for object properties in OWL.</rdfs:comment>
+        <rdfs:label>uses concept</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -933,6 +1144,20 @@
     <!-- https://w3id.org/polifonia/ontology/core/Concept -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Concept">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/isConceptUsedIn"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/isDefinedIn"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="https://w3id.org/polifonia/ontology/core/Description"/>
+        <owl:disjointWith rdf:resource="https://w3id.org/polifonia/ontology/core/Situation"/>
         <rdfs:comment xml:lang="en">A concept is a Social Object. 
 The classifies relation relates concepts to entities at some time, but time can only be expressed in the alternative pattern: timeindexedclassification.</rdfs:comment>
         <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/classification.owl"/>
@@ -950,11 +1175,63 @@ The classifies relation relates concepts to entities at some time, but time can 
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/Description -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Description">
+        <owl:disjointWith rdf:resource="https://w3id.org/polifonia/ontology/core/Situation"/>
+        <rdfs:comment rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/description.owl"/>
+        <rdfs:comment xml:lang="en">A Description represents a conceptualization. It can be thought also as a &apos;descriptive context&apos; that defines concepts in order to see a &apos;relational context&apos; out of a set of data or observations. For example, a Plan is a description of some actions to be executed by agents in a certain way, with certain parameters; a Diagnosis is a description that provides an interpretation to a set of observed entities, etc.
+A Description typically defines at least one Concept, for example the &apos;preparing a coffee&apos; Description could define concepts such as &apos;Heater&apos;, &apos;AmountOfWater&apos;, &apos;CoffeeMix&apos;, etc.
+With respect to other patterns, descriptions are &apos;abstractions&apos; of situations (cf. the &apos;situation&apos; pattern), and in some complex use cases (e.g. matching executions to plan models), the two patterns can be composed (see the descriptionsituation pattern).</rdfs:comment>
+        <rdfs:label xml:lang="en">Description</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/District -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/District">
         <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ontology/core/GeographicalFeature"/>
         <rdfs:label xml:lang="en">District</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/Event -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Event">
+        <rdfs:comment>Any physical, social, or mental process, event, or state.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl"/>
+        <rdfs:label xml:lang="en">Event</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/Explanation -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Explanation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasCondition"/>
+                <owl:someValuesFrom rdf:resource="https://w3id.org/polifonia/ontology/core/Situation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasExplanandum"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/hasExplanans"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Class explanation defined as &quot;when X happens, then, due to a given set of circumstances C, Y will occur because of a given law L&quot;. 
+In order to be complete, an explanation needs at least one antecedent event (explanans), a posterior event (a posterior event) and has to happen in a context that relates the two events (the context), governed by a law (theory). </rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://ontologydesignpatterns.org/wiki/Submissions:ExplanationODP"/>
+        <rdfs:label xml:lang="en">Explanation</rdfs:label>
     </owl:Class>
     
 
@@ -1221,6 +1498,18 @@ The classifies relation relates concepts to entities at some time, but time can 
     <!-- https://w3id.org/polifonia/ontology/core/Situation -->
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Situation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/isSettingFor"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://w3id.org/polifonia/ontology/core/satisfies"/>
+                <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">Any entity that typically flows in time, either in the physical or social world  Examples include athmospheric phenomena, concerts, travels, institutional processes, etc. It also represents a relational context created by an observer on the basis of a frame.</rdfs:comment>
         <rdfs:label xml:lang="en">Situation</rdfs:label>
     </owl:Class>
@@ -1258,6 +1547,17 @@ The classifies relation relates concepts to entities at some time, but time can 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Task">
         <rdfs:comment xml:lang="en">A task that classifies an action to be executed.</rdfs:comment>
         <rdfs:label xml:lang="en">Task</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/Theory -->
+
+    <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Theory">
+        <rdfs:comment xml:lang="en">The theory that has the binding force or effect on some events under analysis.
+From Dolce: &quot;A theory is a description that represents a set of assumptions for describing something, usually general. Scientific, philosophical, and common-sense theories can be included here&quot;</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl"/>
+        <rdfs:label xml:lang="en">Theory</rdfs:label>
     </owl:Class>
     
 
