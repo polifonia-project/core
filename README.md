@@ -9,6 +9,12 @@ An ontology for general and foundational concepts and relations (e.g. place, tim
 
 The Core ontology models general-purpose concepts, relationships and ontology design patterns (e.g. place, time, classification, situation), which are orthogonal to the whole Polifonia ontology network. Indeed, it is imported and possibly specialised by the other ontology modules of the network.
 
+![core_main](diagrams/core_main.png)
+
+### Information Realization ODP
+
+![core_information_realization](diagrams/core_info_realization.png)
+
 ## Competency questions addressed
 
 | **ID** | **Competency Question**                                                                                                                    |
