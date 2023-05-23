@@ -44,6 +44,9 @@ core:isTimeIndexedNameOf ?entity .
 }
 ```
 
+## Aligned ontologies
+- [DUL](http://www.ontologydesignpatterns.org/ont/dul/DUL.owl)
+
 ## Statistics
 - number of classes: 49 
 - number of object properties: 75
