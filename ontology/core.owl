@@ -5,12 +5,52 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:terms="http://purl.org/dc/terms/">
     <owl:Ontology rdf:about="https://w3id.org/polifonia/ontology/core/">
         <owl:versionIRI rdf:resource="https://w3id.org/polifonia/ontology/core/1.0/"/>
         <rdfs:comment xml:lang="en">This is the ontology Core of the Polifonia ontology network. It represents general-purpose concepts and relations (e.g. place, time, classification, situation) orthogonal to the whole network, and is imported by all the other thematic ontology modules of the network.</rdfs:comment>
         <rdfs:label xml:lang="en">Core ontology (Polifonia ontology network)</rdfs:label>
+        <dc:creator xml:lang="en">Andrea Poltronieri</dc:creator>
+        <dc:creator xml:lang="en">Jacopo de Berardinis</dc:creator>
+        <dc:creator xml:lang="en">Valentina Carriero</dc:creator>
+        <dc:creator xml:lang="en">Valentina Presutti</dc:creator>
+        <dc:creator xml:lang="en">Nicolas Lazzari</dc:creator>
+        <dc:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>
+        <terms:license rdf:resource="https://creativecommons.org/licenses/by-sa/4.0/"/>
+        <rdfs:comment xml:lang="en"></rdfs:comment>
+        <owl:priorVersion xml:lang="en">1.0</owl:priorVersion>
     </owl:Ontology>
+
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+
+
+
+    <!-- http://purl.org/dc/elements/1.1/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/license"/>
+
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
     
 
 
