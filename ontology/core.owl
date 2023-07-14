@@ -197,6 +197,7 @@ A same Entity can be given different descriptions, for example, an old cradle ca
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ontology/core/hasAddressComponent"/>
         <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Address"/>
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/City"/>
+        <rdfs:comment xml:lang="en">The relation between an address and its city (that is an address component).</rdfs:comment>
         <rdfs:label xml:lang="en">has city</rdfs:label>
     </owl:ObjectProperty>
     
@@ -205,6 +206,7 @@ A same Entity can be given different descriptions, for example, an old cradle ca
     <!-- https://w3id.org/polifonia/ontology/core/hasCondition -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasCondition">
+        <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ontology/core/isConditionOf"/>
         <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Explanation"/>
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Situation"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
@@ -228,6 +230,7 @@ A same Entity can be given different descriptions, for example, an old cradle ca
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ontology/core/hasAddressComponent"/>
         <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Address"/>
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Country"/>
+        <rdfs:comment xml:lang="en">The relation between an address and its country (that is an address component).</rdfs:comment>
         <rdfs:label xml:lang="en">has country</rdfs:label>
     </owl:ObjectProperty>
     
@@ -239,6 +242,7 @@ A same Entity can be given different descriptions, for example, an old cradle ca
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ontology/core/hasAddressComponent"/>
         <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Address"/>
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/District"/>
+        <rdfs:comment xml:lang="en">The relation between an address and its district (that is an address component).</rdfs:comment>
         <rdfs:label xml:lang="en">has district</rdfs:label>
     </owl:ObjectProperty>
     
@@ -256,6 +260,7 @@ A same Entity can be given different descriptions, for example, an old cradle ca
     <!-- https://w3id.org/polifonia/ontology/core/hasExplanandum -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasExplanandum">
+        <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ontology/core/hasExplanans"/>
         <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Explanation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:comment xml:lang="en">Relates the explanation to its posterior event</rdfs:comment>
@@ -280,6 +285,10 @@ A same Entity can be given different descriptions, for example, an old cradle ca
     <!-- https://w3id.org/polifonia/ontology/core/hasLanguage -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasLanguage">
+        <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ontology/core/isLanguageOf"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Language"/>
+        <rdfs:comment xml:lang="en">The relation between an entity and its language.</rdfs:comment>
         <rdfs:label xml:lang="en">Has language</rdfs:label>
     </owl:ObjectProperty>
     
@@ -303,6 +312,7 @@ A same Entity can be given different descriptions, for example, an old cradle ca
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/CollectionMembership"/>
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/CellectionMembershipStrength"/>
+        <rdfs:comment xml:lang="en">The relation between a collection membership and its strenght.</rdfs:comment>
         <rdfs:label xml:lang="en">Has membership strength</rdfs:label>
     </owl:ObjectProperty>
     
@@ -341,8 +351,10 @@ A same Entity can be given different descriptions, for example, an old cradle ca
     <!-- https://w3id.org/polifonia/ontology/core/hasName -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasName">
+        <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ontology/core/isNameOf"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Name"/>
+        <rdfs:comment xml:lang="en">The relation between an entity and its name.</rdfs:comment>
         <rdfs:label xml:lang="en">has name</rdfs:label>
     </owl:ObjectProperty>
     
@@ -352,8 +364,10 @@ A same Entity can be given different descriptions, for example, an old cradle ca
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/hasNickname">
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ontology/core/hasName"/>
+        <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ontology/core/isNicknameOf"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Name"/>
+        <rdfs:comment xml:lang="en">The relation between an entity and its nickname.</rdfs:comment>
         <rdfs:label xml:lang="en">has nickname</rdfs:label>
     </owl:ObjectProperty>
     
@@ -391,6 +405,7 @@ A same Entity can be given different descriptions, for example, an old cradle ca
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ontology/core/hasAddressComponent"/>
         <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Address"/>
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Province"/>
+        <rdfs:comment xml:lang="en">The relation between an address and its province (that is an address component).</rdfs:comment>
         <rdfs:label xml:lang="en">has province</rdfs:label>
     </owl:ObjectProperty>
     
@@ -402,6 +417,7 @@ A same Entity can be given different descriptions, for example, an old cradle ca
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ontology/core/hasAddressComponent"/>
         <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Address"/>
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Region"/>
+        <rdfs:comment xml:lang="en">The relation between an address and its region (that is an address component).</rdfs:comment>
         <rdfs:label xml:lang="en">has region</rdfs:label>
     </owl:ObjectProperty>
     
@@ -454,6 +470,7 @@ A same Entity can be given different descriptions, for example, an old cradle ca
         <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ontology/core/hasAddressComponent"/>
         <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Address"/>
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Street"/>
+        <rdfs:comment xml:lang="en">The relation between an address and its street (that is an address component).</rdfs:comment>
         <rdfs:label xml:lang="en">has street</rdfs:label>
     </owl:ObjectProperty>
     
@@ -476,6 +493,7 @@ A same Entity can be given different descriptions, for example, an old cradle ca
         <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ontology/core/isTimeIntervalOf"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/TimeInterval"/>
+        <rdfs:comment xml:lang="en">The relation between an entity and a time interval.</rdfs:comment>
         <rdfs:label xml:lang="en">has time interval</rdfs:label>
     </owl:ObjectProperty>
     
@@ -487,6 +505,7 @@ A same Entity can be given different descriptions, for example, an old cradle ca
         <owl:inverseOf rdf:resource="https://w3id.org/polifonia/ontology/core/isTitleOf"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Title"/>
+        <rdfs:comment xml:lang="en">The relation between an entity and its title.</rdfs:comment>
         <rdfs:label xml:lang="en">has title</rdfs:label>
     </owl:ObjectProperty>
     
@@ -608,7 +627,11 @@ A same Entity can be given different descriptions, for example, an old cradle ca
 
     <!-- https://w3id.org/polifonia/ontology/core/isAliasOf -->
 
-    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isAliasOf"/>
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isAliasOf">
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Alias"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">The relation between an alias and an entity it is an alias of.</rdfs:comment>
+    </owl:ObjectProperty>
     
 
 
@@ -681,6 +704,17 @@ A same Entity can be given different descriptions, for example, an old cradle ca
         <rdfs:comment xml:lang="en">The relation between an explanation and the agent that has conceptualized it.</rdfs:comment>
         <rdfs:label xml:lang="en">is conceptualized By</rdfs:label>
         <rdfs:seeAlso rdf:resource="http://ontologydesignpatterns.org/wiki/Submissions:ExplanationODP"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/isConditionOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isConditionOf">
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Situation"/>
+        <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Explanation"/>
+        <rdfs:comment xml:lang="en">contextualises an explanation</rdfs:comment>
+        <rdfs:label xml:lang="en">is condition of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -767,6 +801,17 @@ A same Thing can be given different descriptions, for example, an old cradle can
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/isLanguageOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isLanguageOf">
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Language"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:label xml:lang="en">The relation between a lanuage and an entity it is the language of.</rdfs:label>
+        <rdfs:label xml:lang="en">is language of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/isMemberOf -->
 
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isMemberOf">
@@ -774,6 +819,29 @@ A same Thing can be given different descriptions, for example, an old cradle can
         <rdfs:range rdf:resource="https://w3id.org/polifonia/ontology/core/Collection"/>
         <rdfs:comment xml:lang="en">The relation between an entity and a collection that the entity is member of.</rdfs:comment>
         <rdfs:label xml:lang="en">Is member of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/isNameOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isNameOf">
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Name"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">The relation between a name and the entity it is a name of.</rdfs:comment>
+        <rdfs:label xml:lang="en">is name of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/isNicknameOf -->
+
+    <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isNicknameOf">
+        <rdfs:subPropertyOf rdf:resource="https://w3id.org/polifonia/ontology/core/isNameOf"/>
+        <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Name"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">The relation between a nickname and the entity it is a nickname of.</rdfs:comment>
+        <rdfs:label xml:lang="en">is nickname of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -873,6 +941,7 @@ A same Thing can be given different descriptions, for example, an old cradle can
     <owl:ObjectProperty rdf:about="https://w3id.org/polifonia/ontology/core/isTitleOf">
         <rdfs:domain rdf:resource="https://w3id.org/polifonia/ontology/core/Title"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">The relation between a title and the entity it is title of.</rdfs:comment>
         <rdfs:label xml:lang="en">is title of</rdfs:label>
     </owl:ObjectProperty>
     
