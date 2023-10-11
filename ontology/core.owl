@@ -1880,6 +1880,16 @@ From Dolce: &quot;A theory is a description that represents a set of assumptions
     
 
 
+    <!-- https://w3id.org/polifonia/ontology/core/End -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/polifonia/ontology/core/End">
+        <rdf:type rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeIndex"/>
+        <rdfs:comment>Refers to the end of a musical piece.</rdfs:comment>
+        <rdfs:label>End</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- https://w3id.org/polifonia/ontology/core/Hours -->
 
     <owl:NamedIndividual rdf:about="https://w3id.org/polifonia/ontology/core/Hours">
@@ -1916,6 +1926,16 @@ From Dolce: &quot;A theory is a description that represents a set of assumptions
 
     <owl:NamedIndividual rdf:about="https://w3id.org/polifonia/ontology/core/Seconds">
         <rdf:type rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeValueType"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://w3id.org/polifonia/ontology/core/Start -->
+
+    <owl:NamedIndividual rdf:about="https://w3id.org/polifonia/ontology/core/Start">
+        <rdf:type rdf:resource="https://w3id.org/polifonia/ontology/core/MusicTimeIndex"/>
+        <rdfs:comment>Refers to the start of a musical piece.</rdfs:comment>
+        <rdfs:label>Start</rdfs:label>
     </owl:NamedIndividual>
 </rdf:RDF>
 
