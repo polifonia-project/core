@@ -1605,7 +1605,7 @@ In order to be complete, an explanation needs at least one antecedent event (exp
 
     <owl:Class rdf:about="https://w3id.org/polifonia/ontology/core/Person">
         <rdfs:subClassOf rdf:resource="https://w3id.org/polifonia/ontology/core/Agent"/>
-        <rdfs:label xml:lang="en">Peron</rdfs:label>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
     </owl:Class>
     
 
